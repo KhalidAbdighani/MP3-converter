@@ -1,0 +1,15 @@
+**/node_modules/
+
+
+**/.env
+
+
+mp3-EXPRESS/uploads/
+mp3-EXPRESS/outputs/
+
+mp3-NEXT/.next/
+mp3-NEXT/out/
+
+
+.DS_Store
+Thumbs.db

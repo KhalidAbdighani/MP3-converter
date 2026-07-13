@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Climate+Crisis:YEAR@1979&family=Racing+Sans+One&family=Story+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Climate+Crisis:YEAR@1979&family=Racing+Sans+One&family=Rubik+Mono+One&family=Story+Script&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: rgb(255, 245, 231);
+}
+
+.GREEN{
+    height: 500px;
+    width: 70%;
+    
+    margin-top: 30px;
+    background-color: rgb(145, 242, 0);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Greenbaba{
+    width: 100%;
+    background-color: rgb(20, 61, 0);
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 30px 0px;
+}
+.H1{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    
+}
+.H1 h1{
+     font-family: "BBH Bartle", sans-serif;
+    font-size: 200PX;
+    color: rgb(145, 242, 0);
+}
+.H1 h2{
+    font-family: "Rubik Mono One", monospace;
+    color: white;
+    font-size: 50PX;
+
+}
