@@ -51,3 +51,22 @@ body{
     font-size: 50PX;
 
 }
+.upload{
+    border: dashed 1px black;
+    margin-top: 40px;
+     padding: 150px 300px;
+     transition: 0.1s;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 10px;
+
+}
+#hvr{
+    width: 0px;
+    transition: 0.2s ease;
+}
+#fileL:hover + #hvr{
+    width: 100%;
+}
