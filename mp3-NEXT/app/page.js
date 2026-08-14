@@ -52,7 +52,7 @@ const [copy, setcopy] =useState(null)
   formdata.append("file", file)
 
   try{
-    const response = await fetch("https://mp3-converter-1-w9hf.onrender.com",
+    const response = await fetch("https://mp3-converter-1-w9hf.onrender.com/mp3",
       {
         method:"POST",
         credentials:"include",
