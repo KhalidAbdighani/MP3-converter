@@ -106,7 +106,7 @@ URL.revokeObjectURL(url);
 
 
   return (
-    <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+    <div className="main" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
         <div className="Greenbaba">
        
           <div className="H1">
@@ -121,9 +121,16 @@ URL.revokeObjectURL(url);
         <div style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
 
             <div className="upload">
-              <div style={{display:"flex", flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+              <div className="file" style={{display:"flex", flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
                 <input onChange={handleFileChange} ref={fileInputRef} style={{display:"none"}} type="file" id="file"></input>
-               <label  id="fileL" htmlFor="file" style={{cursor:"pointer"}}> <BsUpload/> UPLOAD FILE</label>
+               <label  id="fileL" htmlFor="file" style={{ 
+    cursor: "pointer", 
+    display: "flex", 
+    alignItems: "center", 
+    gap: "8px", 
+    whiteSpace: "nowrap",
+    padding: "10px 20px"
+  }}> <BsUpload/> UPLOAD FILE</label>
               
               <div id="hvr" style={{height:"1px", background:"black"}}></div>
 
@@ -133,14 +140,32 @@ URL.revokeObjectURL(url);
 
               {file &&(
                 !isConverting?  (
-                  <div style={{display:"flex" , flexDirection:"column",justifyContent:"center",alignItems:"center",gap:"10px"}}>
-                  <p  style={{fontSize:"13px"}}>convert {file.name} to mp3</p>
+                  <div style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "10px",
+      marginTop: "15px"
+    }}>
+                  <p  style={{
+        fontSize: "14px",
+        whiteSpace: "nowrap",
+        display: "flex",
+        alignItems: "center",
+        gap: "6px"
+      }}>convert {file.name} to mp3</p>
                   <button onClick={convert} >Click to start</button>
                 </div>
                 ) :
 
                 <div>
-                   <p>CONVERTING --(<span style={{color:"rgb(0, 149, 149)"}}> {file.name}</span>)-- to mp3</p>
+                   <p style={{
+        whiteSpace: "nowrap",
+        display: "flex",
+        alignItems: "center",
+        gap: "6px"
+      }} >CONVERTING --(<span style={{color:"rgb(0, 149, 149)"}}> {file.name}</span>)-- to mp3</p>
                     <div style={{width:"100%", height:"2px", background:"#ddd", borderRadius:"15px", overflow:"hidden"}}>
                     <div style={{width:`${progress}%`, height:"100%", background:"rgb(43, 67, 17)", transition:"width .2s linear"}}></div>
                     </div>
@@ -150,10 +175,16 @@ URL.revokeObjectURL(url);
                 </div>
               
               )}
-
+  
               {copy && (
                 end && (
-                     <p><FaCheck/> (<span style={{color:"rgb(0, 149, 149)"}}> {copy.name}</span>)-- to mp3</p>
+                     <p style={{
+    whiteSpace: "nowrap",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    marginTop: "15px"
+  }}><FaCheck/> (<span > {copy.name}</span>)-- to mp3</p>
                 )
                  
 

@@ -11,6 +11,9 @@ body{
     background-color: rgb(255, 245, 231);
 }
 
+.main{
+    width: 100%;
+}
 .GREEN{
     height: 500px;
     width: 70%;
@@ -54,19 +57,38 @@ body{
 .upload{
     border: dashed 1px black;
     margin-top: 40px;
-     padding: 150px 300px;
+     width: 90%;
+    
+    height: 400px;
+    padding: 60px 20px;
      transition: 0.1s;
      display: flex;
      align-items: center;
      justify-content: center;
      flex-direction: column;
      gap: 10px;
-
 }
+.file{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+  
+   
+}
+
 #hvr{
     width: 0px;
     transition: 0.2s ease;
 }
 #fileL:hover + #hvr{
     width: 100%;
+}
+
+@media (max-width: 800px){
+    .H1 h1{
+        font-size: 100px;
+    }
+    
 }
