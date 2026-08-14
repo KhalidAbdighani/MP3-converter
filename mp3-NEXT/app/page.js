@@ -106,6 +106,8 @@ URL.revokeObjectURL(url);
     };
 
 }, []);
+
+
   return (
     <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
         <div className="Greenbaba">

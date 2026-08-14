@@ -19,9 +19,7 @@ const postConvertToMp3= (req,res)=>{
         const inputpath= req.file.path
         console.log("inputpath =", inputpath);
         console.log("exists =", fs.existsSync(inputpath));
-        const filename= path.parse(req.file.filename).name
-        const outputfile = `${filename}_converted.mp3`
-        const outputPATH = path.join(uploadDir,outputfile)
+     
         console.log(`started converting: ${req.file.originalname}`);
 
 
@@ -40,6 +38,11 @@ const postConvertToMp3= (req,res)=>{
             error: "Cannot read media information"
         });}
          const totalDuration = metadata.format.duration;
+            res.setHeader("Content-Type", "audio/mpeg");
+            res.setHeader(
+            "Content-Disposition",
+            `attachment; filename="${path.parse(req.file.originalname).name}.mp3"`
+            );
 
         ffmpeg(inputpath)
 
@@ -60,27 +63,10 @@ const postConvertToMp3= (req,res)=>{
             console.log("converted successfuly!");
 
             
-            res.download(
-                outputPATH,
-                `${path.parse(req.file.originalname).name}.mp3`,
-                (err) => {
-
-                    if (err) {
-                        console.error(err);
-                    }
-
-                  
-                    // if (fs.existsSync(inputpath)) {
-                    //     fs.unlinkSync(inputpath);
-                    // }
-
-                    if (fs.existsSync(outputPATH)) {
-                        fs.unlinkSync(outputPATH);
-                    }
-
-                }
-            );
-
+        
+if (fs.existsSync(inputpath)) {
+        fs.unlinkSync(inputpath);
+    }
 
         })
         .on("progress", (progress) => {
@@ -124,7 +110,7 @@ const postConvertToMp3= (req,res)=>{
         })
 
        
-        .save(outputPATH);
+        .pipe(res);
     });
 
    
