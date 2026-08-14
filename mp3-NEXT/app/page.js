@@ -36,9 +36,6 @@ const [copy, setcopy] =useState(null)
     }
   };
 
-  const handleBoxClick = () => {
-    fileInputRef.current.click();
-  };
 
  
 
@@ -126,7 +123,7 @@ URL.revokeObjectURL(url);
             <div className="upload">
               <div style={{display:"flex", flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
                 <input onChange={handleFileChange} ref={fileInputRef} style={{display:"none"}} type="file" id="file"></input>
-               <label onClick={handleBoxClick} id="fileL" htmlFor="file" style={{cursor:"pointer"}}> <BsUpload/> UPLOAD FILE</label>
+               <label  id="fileL" htmlFor="file" style={{cursor:"pointer"}}> <BsUpload/> UPLOAD FILE</label>
               
               <div id="hvr" style={{height:"1px", background:"black"}}></div>
 
