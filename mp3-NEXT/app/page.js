@@ -88,6 +88,7 @@ URL.revokeObjectURL(url);
         
   }
 
+
   useEffect(() => {
 
     const socket = io("https://mp3-converter-1-w9hf.onrender.com");
@@ -165,7 +166,7 @@ URL.revokeObjectURL(url);
         display: "flex",
         alignItems: "center",
         gap: "6px"
-      }} >CONVERTING --(<span style={{color:"rgb(0, 149, 149)"}}> {file.name}</span>)-- to mp3</p>
+      }} >CONVERTING -- (<span style={{color:"rgb(0, 149, 149)"}}> {file.name}</span>)-- to mp3</p>
                     <div style={{width:"100%", height:"2px", background:"#ddd", borderRadius:"15px", overflow:"hidden"}}>
                     <div style={{width:`${progress}%`, height:"100%", background:"rgb(43, 67, 17)", transition:"width .2s linear"}}></div>
                     </div>
