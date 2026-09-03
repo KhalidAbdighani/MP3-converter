@@ -47,9 +47,10 @@ const [copy, setcopy] =useState(null)
      const formdata=new FormData()
 
   formdata.append("file", file)
+  console.log("🚀 ABOUT TO FETCH");
 
   try{
-    const response = await fetch("https://mp3-converter-1-w9hf.onrender.com/mp3",
+    const response = await fetch("http://localhost:5948/mp3",
       {
         method:"POST",
         credentials:"include",
@@ -91,7 +92,7 @@ URL.revokeObjectURL(url);
 
   useEffect(() => {
 
-    const socket = io("https://mp3-converter-1-w9hf.onrender.com");
+    const socket = io("http://localhost:5948");
 
     socket.on("progress", (data) => {
 

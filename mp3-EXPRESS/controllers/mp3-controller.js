@@ -5,6 +5,7 @@ const uploadDir = path.join(__dirname, "../uploads");
 
 const postConvertToMp3= (req,res)=>{
 
+        console.log("🔥 DOWNLOAD ROUTE HIT");
 
     const io = req.app.get("io");
 
