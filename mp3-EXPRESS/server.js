@@ -11,7 +11,7 @@ const app = express()
 const server = http.createServer(app)
 
 const io = new Server(server, { cors: { 
-    origin: "http://localhost:4000",
+    origin: "https://mp-3-converter-six.vercel.app",
     credentials:true
 }})
 app.set("io", io)
@@ -27,7 +27,7 @@ app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 console.log(process.env.CLIENT_PORT);
 app.use(cors({
-    origin: "http://localhost:4000",
+    origin: "https://mp-3-converter-six.vercel.app",
     credentials: true
 }));
 

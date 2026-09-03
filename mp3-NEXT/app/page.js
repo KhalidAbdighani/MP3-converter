@@ -50,7 +50,7 @@ const [copy, setcopy] =useState(null)
   console.log("🚀 ABOUT TO FETCH");
 
   try{
-    const response = await fetch("http://localhost:5948/mp3",
+    const response = await fetch("https://mp3-converter-1-w9hf.onrender.com/mp3",
       {
         method:"POST",
         credentials:"include",
@@ -92,7 +92,7 @@ URL.revokeObjectURL(url);
 
   useEffect(() => {
 
-    const socket = io("http://localhost:5948");
+    const socket = io("https://mp3-converter-1-w9hf.onrender.com");
 
     socket.on("progress", (data) => {
 
